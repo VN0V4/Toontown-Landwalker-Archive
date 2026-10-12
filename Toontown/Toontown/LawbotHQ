@@ -1,0 +1,258 @@
+class LOAD:
+	def loadGame(self):
+		self.TRAINING_GROUND = loader.loadModel("terrain.bam")
+		self.TRAINING_GROUND_SKY = loader.loadModel("TT_sky.bam")
+		
+		self.FEATHER = Actor("feather-mod.bam",
+							{"chan": "feather-chan.bam"})
+							
+		self.TICKLE_SFX = loader.loadSfx("phase_5/audio/sfx/AA_heal_tickle.mp3")
+		
+		self.FWD = loader.loadSfx("phase_3/audio/sfx/GUI_create_toon_fwd.mp3")
+		self.RLVR = loader.loadSfx("phase_3/audio/sfx/GUI_rollover.mp3")
+		
+		self.DIALOG_BOX = loader.loadModel("dialog_box_gui.bam")
+		self.DB_BTNS = loader.loadModel("dialog_box_buttons_gui.bam")
+		self.GENBTN = loader.loadModel("quit_button.bam")
+		self.ARROWS = loader.loadModel("create_a_toon_gui.bam")
+		
+		self.WEAPON_ICONS = loader.loadModel("weapon_icons.bam")
+		
+		self.FONT3 = loader.loadFont("phase_3/models/fonts/MickeyFont.bam")
+		self.B_CAKE = loader.loadModel("birthday-cake-mod.bam")
+		self.C_CAKE = loader.loadModel("picnic_cupcake.bam")
+		self.C_CAKE.setTwoSided(True)
+		self.C_CAKE.setScale(3)
+		
+		self.AVA_SHIRT = loader.loadTexture("phase_4/maps/tt_t_chr_avt_shirt_cogbuster.jpg")
+		self.AVA_SLEEVE = loader.loadTexture("phase_4/maps/tt_t_chr_avt_shirtSleeve_cogbuster.jpg")
+		self.AVA_SHORTS = loader.loadTexture("phase_4/maps/tt_t_chr_avt_shorts_cogbuster.jpg")
+		
+		self.WEAPON_SELECT = loader.loadSfx("phase_3/audio/sfx/GUI_weapon_select.wav")
+		
+		
+		self.COACH_SHIRT = loader.loadTexture("phase_4/maps/tt_t_chr_avt_shirt_sellbotCrusher.jpg")
+		self.COACH_SLEEVE = loader.loadTexture("phase_4/maps/tt_t_chr_avt_shirtSleeve_sellbotCrusher.jpg")
+		self.COACH_SHORTS = loader.loadTexture("phase_4/maps/tt_t_chr_avt_shorts_sellbotCrusher.jpg")
+		
+		self.LOSE_SFX = loader.loadSfx("phase_5/audio/sfx/ENC_Lose.mp3")
+		
+		
+		self.MC_HELP1 = loader.loadSfx("phase_9/audio/sfx/morsecode_signal_help_01.wav")
+		
+		self.VD_SFX = loader.loadSfx("phase_3.5/audio/sfx/ENC_Win.mp3")
+		
+		self.PROP = Actor("propeller-mod.bam",
+							{"spin": "propeller-chan.bam"})
+		self.PROP_SFX = loader.loadSfx("phase_5/audio/sfx/ENC_propeller_in.mp3")
+		self.PROP_SFX.setVolume(2.0)
+		self.PROP_IDLE = loader.loadSfx("phase_4/audio/sfx/TB_propeller_1.5.wav")
+		self.PROP_IDLE.setVolume(2.0)
+		
+		self.KNIFE = loader.loadModel("dagger.bam")
+		
+		self.COG_STATEMENT = loader.loadSfx("phase_3.5/audio/dial/COG_VO_statement.mp3")
+		self.COG_GRUNT = loader.loadSfx("phase_3.5/audio/dial/COG_VO_grunt.mp3")
+		
+		self.BOSS_STATEMENT = loader.loadSfx("phase_9/audio/sfx/Boss_COG_VO_statement.mp3")
+		self.BOSS_GRUNT = loader.loadSfx("phase_9/audio/sfx/Boss_COG_VO_grunt.mp3")
+		
+		self.AVA_TS = loader.loadTexture("phase_4/maps/tt_t_chr_avt_acc_sho_tennisShoesGreen.jpg")
+		
+		self.RUN_LOOP = loader.loadSfx("phase_3.5/audio/sfx/AV_footstep_runloop.wav")
+		self.RUN_LOOP.setLoop(True)
+		self.WLK_LOOP = loader.loadSfx("phase_3.5/audio/sfx/AV_footstep_walkloop.wav")
+		self.WLK_LOOP.setLoop(True)
+		
+		self.R3_BGM = loader.loadSfx("phase_12/audio/bgm/BossBot_CEO_v2.mid")
+		self.R3_BGM.setLoop(True)
+		self.R3_BGM.setVolume(1)
+		
+		self.COG_DIE_SFX = loader.loadSfx("phase_3.5/audio/sfx/Cog_Death.mp3")
+		
+		self.PIE = loader.loadModel("tart.bam")
+		self.TIE = loader.loadModel("power-tie.bam")
+		self.TIE.setBillboardAxis()
+		self.TIE.setScale(2.0)
+		
+		self.COG_2_LOSE = Actor("suitC-lose-mod.bam",
+								{"lose": "suitC-lose.bam"})
+								
+		self.COG_HEAD2 = loader.loadModel("suitC-heads.bam")
+		self.TW_HEAD = self.COG_HEAD2.find('**/tightwad')
+		
+		self.COG_2 = Actor("suitC-mod.bam",
+							{"walk": "suitC-walk.bam",
+							"neutral": "suitC-neutral.bam",
+							"land": "suitC-landing.bam",
+							"throw": "suitC-throw-paper.bam",
+							"pie": "suitC-pie-small.bam",
+							"dial": "suitC-phone.bam",
+							"knife": "suitC-glower.bam"})
+		
+		#self.COG_2.reparentTo(render)
+		self.TW_HEAD.reparentTo(self.COG_2.find('**/joint_head'))
+							
+		
+		self.COG_MUSIC = loader.loadSfx("phase_7/audio/bgm/encntr_suit_winning_indoor.mid")
+		self.COG_MUSIC.setLoop(True)
+		self.COG_MUSIC.setVolume(0.5)
+		
+		self.COG_LOSE = Actor("suitB-lose-mod.bam",
+							{"lose": "suitB-lose.bam"})
+		
+		self.JUMP_START_SFX = loader.loadSfx("phase_5/audio/sfx/General_throw_miss.wav")
+		self.JUMP_END_SFX = loader.loadSfx("phase_3.5/audio/sfx/ENC_cogfall_apart.wav")
+		
+		self.FONT2 = loader.loadFont("phase_3/models/fonts/vtRemingtonPortable.ttf")
+		
+		self.AVATAR_HEAD = Actor("tt_a_chr_dgm_skirt_head_1000.bam",
+								{"neutral": "tt_a_chr_dgm_skirt_head_neutral.bam",
+								"run": "tt_a_chr_dgm_skirt_head_run.bam",
+								"walk": "tt_a_chr_dgm_skirt_head_walk.bam",
+								"pie": "tt_a_chr_dgm_skirt_head_pie-throw.bam",
+								"jump": "tt_a_chr_dgm_skirt_head_jump.bam",
+								"slipf": "tt_a_chr_dgm_skirt_head_slip-forward.bam",
+								"slipb": "tt_a_chr_dgm_skirt_head_slip-backward.bam",
+								"lose": "tt_a_chr_dgm_skirt_head_lose.bam",
+								"vd": "tt_a_chr_dgm_skirt_head_victory-dance.bam",
+								"cringe": "tt_a_chr_dgm_skirt_head_cringe.bam"})
+								
+		self.AVATAR_TORSO = Actor("tt_a_chr_dgl_shorts_torso_1000.bam",
+								{"neutral": "tt_a_chr_dgl_shorts_torso_neutral.bam",
+								"run": "tt_a_chr_dgl_shorts_torso_run.bam",
+								"walk": "tt_a_chr_dgl_shorts_torso_walk.bam",
+								"pie": "tt_a_chr_dgl_shorts_torso_pie-throw.bam",
+								"jump": "tt_a_chr_dgl_shorts_torso_jump.bam",
+								"slipf": "tt_a_chr_dgl_shorts_torso_slip-forward.bam",
+								"slipb": "tt_a_chr_dgl_shorts_torso_slip-backward.bam",
+								"lose": "tt_a_chr_dgl_shorts_torso_lose.bam",
+								"vd": "tt_a_chr_dgl_shorts_torso_victory-dance.bam",
+								"cringe": "tt_a_chr_dgl_shorts_torso_cringe.bam"})
+								
+		self.AVATAR_LEGS = Actor("tt_a_chr_dgm_shorts_legs_1000.bam",
+								{"neutral": "tt_a_chr_dgm_shorts_legs_neutral.bam",
+								"run": "tt_a_chr_dgm_shorts_legs_run.bam",
+								"walk": "tt_a_chr_dgm_shorts_legs_walk.bam",
+								"pie": "tt_a_chr_dgm_shorts_legs_pie-throw.bam",
+								"jump": "tt_a_chr_dgm_shorts_legs_jump.bam",
+								"slipf": "tt_a_chr_dgm_shorts_legs_slip-forward.bam",
+								"slipb": "tt_a_chr_dgm_shorts_legs_slip-backward.bam",
+								"lose": "tt_a_chr_dgm_shorts_legs_lose.bam",
+								"vd": "tt_a_chr_dgm_shorts_legs_victory-dance.bam",
+								"cringe": "tt_a_chr_dgm_shorts_legs_cringe.bam"})
+								
+		self.AVATAR_LEGS.find('**/shoes').setTexture(self.AVA_TS, 1)
+								
+		self.COACH_HEAD = loader.loadModel("pig-heads-1000.bam")
+		self.COACH_TORSO = Actor("tt_a_chr_dgs_shorts_torso_1000.bam",
+											{"neutral": "tt_a_chr_dgs_shorts_torso_neutral.bam",
+											"run": "tt_a_chr_dgs_shorts_torso_run.bam",
+											"walk": "tt_a_chr_dgs_shorts_torso_walk.bam",
+											"tickle": "tt_a_chr_dgs_shorts_torso_tickle.bam"})
+											
+		self.COACH_LEGS = Actor("tt_a_chr_dgs_shorts_legs_1000.bam",
+											{"neutral": "tt_a_chr_dgs_shorts_legs_neutral.bam",
+											"run": "tt_a_chr_dgs_shorts_legs_run.bam",
+											"walk": "tt_a_chr_dgs_shorts_legs_walk.bam",
+											"tickle": "tt_a_chr_dgs_shorts_legs_tickle.bam"})
+											
+		self.FONT1 = loader.loadFont("phase_3/models/fonts/ImpressBT.ttf")
+		
+		self.COACH_DIAL = loader.loadSfx("phase_3.5/audio/dial/coach.wav")
+		
+		self.BOX = loader.loadModel("chatbox.bam")
+		
+		self.COG_1 = Actor("suitB-mod.bam",
+						{"walk": "suitB-walk.bam",
+						"neutral": "suitB-neutral.bam",
+						"land": "suitB-landing.bam",
+						"throw": "suitB-throw-object.bam",
+						"throwp": "suitB-throw-paper.bam",
+						"jump": "suitB-jump.bam",
+						"pie": "suitB-pie-small.bam",
+						"dial": "suitB-phone.bam"})
+						
+						
+		self.COG_1_HEAD = loader.loadModel("suitB-heads.bam")
+		
+		self.SHADOW_AVATAR = loader.loadModel("drop_shadow.bam")
+		self.SAVNP = NodePath("avatar shadow")
+		self.SHADOW_AVATAR.reparentTo(self.SAVNP)
+		self.SHADOW_COG = loader.loadModel("drop_shadow.bam")
+		self.SCONP = NodePath("cog shadow")
+		self.SHADOW_COG.reparentTo(self.SCONP)
+		self.SHADOW_COACH = loader.loadModel("drop_shadow.bam")
+		self.SCNP = NodePath("coach shadow")
+		self.SHADOW_COACH.reparentTo(self.SCNP)
+		
+		self.PIE_SPLAT_SFX = loader.loadSfx("phase_4/audio/sfx/AA_wholepie_only.mp3")
+		self.PIE_THROW_SFX = loader.loadSfx("phase_3.5/audio/sfx/AA_pie_throw_only.mp3")
+		
+		self.SPLAT = Actor("splat-mod.bam",
+							{"chan": "splat-chan.bam"})
+		self.SPLAT.setColor(0.996094, 0.898438, 0.320312, 1.0)
+		
+		self.COG_CHECKPOINT1 = TextNode("Cog checkpoint 1")
+		#self.COG_CHECKPOINT1.setText("Checkpoint1")
+		self.COG_CHECKPOINT1.setAlign(TextNode.ACenter)
+		self.COG_CP1_NP = render.attachNewNode(self.COG_CHECKPOINT1)
+		self.COG_CP1_NP.reparentTo(render)
+		self.COG_CP1_NP.setBillboardAxis()
+		self.COG_CP1_NP.setPos(49.03, -7.05, 8)
+		
+		self.COG_CHECKPOINT2 = TextNode("Cog checkpoint 2")
+		#self.COG_CHECKPOINT2.setText("Checkpoint2")
+		self.COG_CHECKPOINT2.setAlign(TextNode.ACenter)
+		self.COG_CP2_NP = render.attachNewNode(self.COG_CHECKPOINT2)
+		self.COG_CP2_NP.reparentTo(render)
+		self.COG_CP2_NP.setBillboardAxis()
+		self.COG_CP2_NP.setPos(40.47, 59.09, 1.00)
+		
+		self.COG_CHECKPOINT3 = TextNode("Cog checkpoint 3")
+		#self.COG_CHECKPOINT3.setText("Checkpoint3")
+		self.COG_CHECKPOINT3.setAlign(TextNode.ACenter)
+		self.COG_CP3_NP = render.attachNewNode(self.COG_CHECKPOINT3)
+		self.COG_CP3_NP.reparentTo(render)
+		self.COG_CP3_NP.setBillboardAxis()
+		self.COG_CP3_NP.setPos(-22.18, 71.07, 0)
+		
+		self.COG_CHECKPOINT4 = TextNode("Cog checkpoint 4")
+		#self.COG_CHECKPOINT4.setText("Checkpoint4")
+		self.COG_CHECKPOINT4.setAlign(TextNode.ACenter)
+		self.COG_CP4_NP = render.attachNewNode(self.COG_CHECKPOINT4)
+		self.COG_CP4_NP.reparentTo(render)
+		self.COG_CP4_NP.setBillboardAxis()
+		self.COG_CP4_NP.setPos(-26.85, 29.85, 3.00)
+		
+		self.COG_CHECKPOINT5 = TextNode("Cog checkpoint 5")
+		#self.COG_CHECKPOINT5.setText("Checkpoint5")
+		self.COG_CHECKPOINT5.setAlign(TextNode.ACenter)
+		self.COG_CP5_NP = render.attachNewNode(self.COG_CHECKPOINT5)
+		self.COG_CP5_NP.reparentTo(render)
+		self.COG_CP5_NP.setBillboardAxis()
+		self.COG_CP5_NP.setPos(-88.57, 27.09, 1.00)
+		
+		self.COG_CHECKPOINT6 = TextNode("Cog checkpoint 6")
+		#self.COG_CHECKPOINT6.setText("Checkpoint6")
+		self.COG_CHECKPOINT6.setAlign(TextNode.ACenter)
+		self.COG_CP6_NP = render.attachNewNode(self.COG_CHECKPOINT6)
+		self.COG_CP6_NP.reparentTo(render)
+		self.COG_CP6_NP.setBillboardAxis()
+		self.COG_CP6_NP.setPos(-44.92, -45.81, 5.00)
+		
+		self.COG_CHECKPOINT7 = TextNode("Cog checkpoint 7")
+		#self.COG_CHECKPOINT7.setText("Checkpoint7")
+		self.COG_CHECKPOINT7.setAlign(TextNode.ACenter)
+		self.COG_CP7_NP = render.attachNewNode(self.COG_CHECKPOINT7)
+		self.COG_CP7_NP.reparentTo(render)
+		self.COG_CP7_NP.setBillboardAxis()
+		self.COG_CP7_NP.setPos(23.12, -58.39, 1.00)
+		
+		self.COG_CHECKPOINT8 = TextNode("Cog checkpoint 8")
+		#self.COG_CHECKPOINT8.setText("Checkpoint8")
+		self.COG_CHECKPOINT8.setAlign(TextNode.ACenter)
+		self.COG_CP8_NP = render.attachNewNode(self.COG_CHECKPOINT8)
+		self.COG_CP8_NP.reparentTo(render)
+		self.COG_CP8_NP.setBillboardAxis()
+		self.COG_CP8_NP.setPos(67.51, -26.35, 9.00)

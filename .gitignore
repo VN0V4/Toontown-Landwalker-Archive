@@ -1,0 +1,21 @@
+# Raw zips (everything in them is already unzipped here)
+*.zip
+
+# Python environments (old Windows ones contain C:\Users\... paths)
+.venv/
+venv*/
+__pycache__/
+*.pyc
+
+# IDE / build output (contain local paths and machine details)
+.idea/
+.vs/
+*.suo
+*.pdb
+Toontown/TTLauncher/TTLauncher/bin/
+Toontown/TTLauncher/TTLauncher/obj/
+Toontown/Toontown/Exe Test/build/
+Toontown/Toontown/Exe Test/dist/
+
+# Windows shortcuts (point at absolute paths on the old PC)
+*.lnk

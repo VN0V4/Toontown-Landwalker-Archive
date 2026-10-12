@@ -1,0 +1,24 @@
+﻿<Window x:Name="Toontown_Launcher" x:Class="TTLauncher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TTLauncher"
+        mc:Ignorable="d"
+        Title="Toontown Launcher" Height="610.538" Width="731.756" Background="#FF0F71E6" Icon="TTImage.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="202*"/>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="104*"/>
+            <RowDefinition Height="188*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="button" Content="Exit" HorizontalAlignment="Left" Margin="593,150,0,0" VerticalAlignment="Top" Width="101" Height="45" Click="button_Click" Grid.Row="3"/>
+        <Button x:Name="button1" Content="Launch" HorizontalAlignment="Left" Margin="16,150,0,0" VerticalAlignment="Top" Width="101" Height="45" Click="button1_Click" Grid.Row="3"/>
+        <Image x:Name="_080a0571d52b2c542938967770efebe4_png" Margin="62,10,82,0" Source="TTImage.png" Stretch="Fill"/>
+        <WebBrowser x:Name="Browser" HorizontalAlignment="Left" Height="289" Margin="10,10,0,0" VerticalAlignment="Top" Width="698" Grid.RowSpan="3" Uid="www.google.com" Grid.Row="1"/>
+        <Button x:Name="button2" Content="News Page" HorizontalAlignment="Left" Margin="285,150,0,0" Grid.Row="3" VerticalAlignment="Top" Width="101" Height="45" Click="button2_Click"/>
+
+
+    </Grid>
+</Window>

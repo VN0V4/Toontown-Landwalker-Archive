@@ -1,0 +1,10 @@
+# No .pyc files
+*.pyc
+
+# Toontown Phase Files
+phase_*
+*.dna
+*.bam
+
+# fileSynce database
+*.ffs_db
