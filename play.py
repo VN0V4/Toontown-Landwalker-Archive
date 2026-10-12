@@ -40,6 +40,10 @@ def main():
     # Behave like `python Script.py` run from the script's own folder (what the .bat files did).
     os.chdir(os.path.dirname(script))
     sys.path.insert(0, os.path.dirname(script))
+    # Panda looks up models on its model path (which starts at $MAIN_DIR, i.e. this launcher's folder),
+    # not the working directory, so put the script's folder first.
+    from panda3d.core import Filename, getModelPath
+    getModelPath().prependDirectory(Filename.fromOsSpecific(os.path.dirname(script)))
     sys.argv = [script] + sys.argv[2:]
     code = compile(source, script, "exec")
     exec(code, {"__name__": "__main__", "__file__": script})
