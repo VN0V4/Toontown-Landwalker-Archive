@@ -37,27 +37,27 @@ base.win.requestProperties(wp)
 
 class LOAD:
 	def loadGame(self):
-		self.TRAINING_GROUND = loader.loadModel("terrain.bam")
-		self.TRAINING_GROUND_SKY = loader.loadModel("TT_sky.bam")
+		self.TRAINING_GROUND = loader.loadModel("phase_5.5/models/estate/terrain.bam")
+		self.TRAINING_GROUND_SKY = loader.loadModel("phase_3.5/models/props/TT_sky.bam")
 
-		self.FEATHER = Actor("feather-mod.bam",
-							{"chan": "feather-chan.bam"})
+		self.FEATHER = Actor("phase_5/models/props/feather-mod.bam",
+							{"chan": "phase_5/models/props/feather-chan.bam"})
 
 		self.TICKLE_SFX = loader.loadSfx("phase_5/audio/sfx/AA_heal_tickle.mp3")
 
 		self.FWD = loader.loadSfx("phase_3/audio/sfx/GUI_create_toon_fwd.mp3")
 		self.RLVR = loader.loadSfx("phase_3/audio/sfx/GUI_rollover.mp3")
 
-		self.DIALOG_BOX = loader.loadModel("dialog_box_gui.bam")
-		self.DB_BTNS = loader.loadModel("dialog_box_buttons_gui.bam")
-		self.GENBTN = loader.loadModel("quit_button.bam")
-		self.ARROWS = loader.loadModel("create_a_toon_gui.bam")
-
-		self.WEAPON_ICONS = loader.loadModel("weapon_icons.bam")
+		self.DIALOG_BOX = loader.loadModel("phase_3/models/gui/dialog_box_gui.bam")
+		self.DB_BTNS = loader.loadModel("phase_3/models/gui/dialog_box_buttons_gui.bam")
+		self.GENBTN = loader.loadModel("phase_3/models/gui/quit_button.bam")
+		self.ARROWS = loader.loadModel("phase_3/models/gui/create_a_toon_gui.bam")
+		## WHY DON'T I HAVE THIS FILE?!
+		#self.WEAPON_ICONS = loader.loadModel("phase_3/models/gui/weapon_icons.bam")
 
 		self.FONT3 = loader.loadFont("phase_3/models/fonts/MickeyFont.bam")
-		self.B_CAKE = loader.loadModel("birthday-cake-mod.bam")
-		self.C_CAKE = loader.loadModel("picnic_cupcake.bam")
+		self.B_CAKE = loader.loadModel("phase_5/models/props/birthday-cake-mod.bam")
+		self.C_CAKE = loader.loadModel("phase_6/models/golf/picnic_cupcake.bam")
 		self.C_CAKE.setTwoSided(True)
 		self.C_CAKE.setScale(3)
 
@@ -79,14 +79,14 @@ class LOAD:
 
 		self.VD_SFX = loader.loadSfx("phase_3.5/audio/sfx/ENC_Win.mp3")
 
-		self.PROP = Actor("propeller-mod.bam",
-							{"spin": "propeller-chan.bam"})
+		self.PROP = Actor("phase_4/models/props/propeller-mod.bam",
+							{"spin": "phase_4/models/props/propeller-chan.bam"})
 		self.PROP_SFX = loader.loadSfx("phase_5/audio/sfx/ENC_propeller_in.mp3")
 		self.PROP_SFX.setVolume(2.0)
 		self.PROP_IDLE = loader.loadSfx("phase_4/audio/sfx/TB_propeller_1.5.wav")
 		self.PROP_IDLE.setVolume(2.0)
 
-		self.KNIFE = loader.loadModel("dagger.bam")
+		self.KNIFE = loader.loadModel("phase_5/models/props/dagger.bam")
 
 		self.COG_STATEMENT = loader.loadSfx("phase_3.5/audio/dial/COG_VO_statement.mp3")
 		self.COG_GRUNT = loader.loadSfx("phase_3.5/audio/dial/COG_VO_grunt.mp3")
@@ -107,25 +107,25 @@ class LOAD:
 
 		self.COG_DIE_SFX = loader.loadSfx("phase_3.5/audio/sfx/Cog_Death.mp3")
 
-		self.PIE = loader.loadModel("tart.bam")
-		self.TIE = loader.loadModel("power-tie.bam")
+		self.PIE = loader.loadModel("phase_3.5/models/props/tart.bam")
+		self.TIE = loader.loadModel("phase_5/models/props/power-tie.bam")
 		self.TIE.setBillboardAxis()
 		self.TIE.setScale(2.0)
 
-		self.COG_2_LOSE = Actor("suitC-lose-mod.bam",
-								{"lose": "suitC-lose.bam"})
+		self.COG_2_LOSE = Actor("phase_3.5/models/char/suitC-lose-mod.bam",
+								{"lose": "phase_3.5/models/char/suitC-lose.bam"})
 
-		self.COG_HEAD2 = loader.loadModel("suitC-heads.bam")
+		self.COG_HEAD2 = loader.loadModel("phase_3.5/models/char/suitC-heads.bam")
 		self.TW_HEAD = self.COG_HEAD2.find('**/tightwad')
 
-		self.COG_2 = Actor("suitC-mod.bam",
-							{"walk": "suitC-walk.bam",
-							"neutral": "suitC-neutral.bam",
-							"land": "suitC-landing.bam",
-							"throw": "suitC-throw-paper.bam",
-							"pie": "suitC-pie-small.bam",
-							"dial": "suitC-phone.bam",
-							"knife": "suitC-glower.bam"})
+		self.COG_2 = Actor("phase_3.5/models/char/suitC-mod.bam",
+							{"walk": "phase_3.5/models/char/suitC-walk.bam",
+							"neutral": "phase_3.5/models/char/suitC-neutral.bam",
+							"land": "phase_3.5/models/char/suitC-landing.bam",
+							"throw": "phase_3.5/models/char/suitC-throw-paper.bam",
+							"pie": "phase_3.5/models/char/suitC-pie-small.bam",
+							"dial": "phase_3.5/models/char/suitC-phone.bam",
+							"knife": "phase_3.5/models/char/suitC-glower.bam"})
 
 		#self.COG_2.reparentTo(render)
 		self.TW_HEAD.reparentTo(self.COG_2.find('**/joint_head'))
@@ -135,102 +135,103 @@ class LOAD:
 		self.COG_MUSIC.setLoop(True)
 		self.COG_MUSIC.setVolume(0.5)
 
-		self.COG_LOSE = Actor("suitB-lose-mod.bam",
-							{"lose": "suitB-lose.bam"})
+		self.COG_LOSE = Actor("phase_4/models/char/suitB-lose-mod.bam",
+							{"lose": "phase_4/models/char/suitB-lose.bam"})
 
 		self.JUMP_START_SFX = loader.loadSfx("phase_5/audio/sfx/General_throw_miss.wav")
 		self.JUMP_END_SFX = loader.loadSfx("phase_3.5/audio/sfx/ENC_cogfall_apart.wav")
 
 		self.FONT2 = loader.loadFont("phase_3/models/fonts/vtRemingtonPortable.ttf")
 
-		self.AVATAR_HEAD = Actor("tt_a_chr_dgm_skirt_head_1000.bam",
-								{"neutral": "tt_a_chr_dgm_skirt_head_neutral.bam",
-								"run": "tt_a_chr_dgm_skirt_head_run.bam",
-								"walk": "tt_a_chr_dgm_skirt_head_walk.bam",
-								"pie": "tt_a_chr_dgm_skirt_head_pie-throw.bam",
-								"jump": "tt_a_chr_dgm_skirt_head_jump.bam",
-								"slipf": "tt_a_chr_dgm_skirt_head_slip-forward.bam",
-								"slipb": "tt_a_chr_dgm_skirt_head_slip-backward.bam",
-								"lose": "tt_a_chr_dgm_skirt_head_lose.bam",
-								"vd": "tt_a_chr_dgm_skirt_head_victory-dance.bam",
-								"cringe": "tt_a_chr_dgm_skirt_head_cringe.bam"})
+		self.AVATAR_HEAD = Actor("phase_3/models/char/tt_a_chr_dgm_skirt_head_1000.bam",
+								{"neutral": "phase_3/models/char/tt_a_chr_dgm_skirt_head_neutral.bam",
+								"run": "phase_3/models/char/tt_a_chr_dgm_skirt_head_run.bam",
+								"walk": "phase_3/models/char/tt_a_chr_dgm_skirt_head_walk.bam",
+								"pie": "phase_3/models/char/tt_a_chr_dgm_skirt_head_pie-throw.bam",
+								"jump": "phase_3/models/char/tt_a_chr_dgm_skirt_head_jump.bam",
+								"slipf": "phase_3/models/char/tt_a_chr_dgm_skirt_head_slip-forward.bam",
+								"slipb": "phase_3/models/char/tt_a_chr_dgm_skirt_head_slip-backward.bam",
+								"lose": "phase_3/models/char/tt_a_chr_dgm_skirt_head_lose.bam",
+								"vd": "phase_3/models/char/tt_a_chr_dgm_skirt_head_victory-dance.bam",
+								"cringe": "phase_3/models/char/tt_a_chr_dgm_skirt_head_cringe.bam"})
 
-		self.AVATAR_TORSO = Actor("tt_a_chr_dgl_shorts_torso_1000.bam",
-								{"neutral": "tt_a_chr_dgl_shorts_torso_neutral.bam",
-								"run": "tt_a_chr_dgl_shorts_torso_run.bam",
-								"walk": "tt_a_chr_dgl_shorts_torso_walk.bam",
-								"pie": "tt_a_chr_dgl_shorts_torso_pie-throw.bam",
-								"jump": "tt_a_chr_dgl_shorts_torso_jump.bam",
-								"slipf": "tt_a_chr_dgl_shorts_torso_slip-forward.bam",
-								"slipb": "tt_a_chr_dgl_shorts_torso_slip-backward.bam",
-								"lose": "tt_a_chr_dgl_shorts_torso_lose.bam",
-								"vd": "tt_a_chr_dgl_shorts_torso_victory-dance.bam",
-								"cringe": "tt_a_chr_dgl_shorts_torso_cringe.bam"})
+		self.AVATAR_TORSO = Actor("phase_3/models/char/tt_a_chr_dgl_shorts_torso_1000.bam",
+								{"neutral": "phase_3/models/char/tt_a_chr_dgl_shorts_torso_neutral.bam",
+								"run": "phase_3/models/char/tt_a_chr_dgl_shorts_torso_run.bam",
+								"walk": "phase_3/models/char/tt_a_chr_dgl_shorts_torso_walk.bam",
+								"pie": "phase_3/models/char/tt_a_chr_dgl_shorts_torso_pie-throw.bam",
+								"jump": "phase_3/models/char/tt_a_chr_dgl_shorts_torso_jump.bam",
+								"slipf": "phase_3/models/char/tt_a_chr_dgl_shorts_torso_slip-forward.bam",
+								"slipb": "phase_3/models/char/tt_a_chr_dgl_shorts_torso_slip-backward.bam",
+								"lose": "phase_3/models/char/tt_a_chr_dgl_shorts_torso_lose.bam",
+								"vd": "phase_3/models/char/tt_a_chr_dgl_shorts_torso_victory-dance.bam",
+								"cringe": "phase_3/models/char/tt_a_chr_dgl_shorts_torso_cringe.bam"})
 
-		self.AVATAR_LEGS = Actor("tt_a_chr_dgm_shorts_legs_1000.bam",
-								{"neutral": "tt_a_chr_dgm_shorts_legs_neutral.bam",
-								"run": "tt_a_chr_dgm_shorts_legs_run.bam",
-								"walk": "tt_a_chr_dgm_shorts_legs_walk.bam",
-								"pie": "tt_a_chr_dgm_shorts_legs_pie-throw.bam",
-								"jump": "tt_a_chr_dgm_shorts_legs_jump.bam",
-								"slipf": "tt_a_chr_dgm_shorts_legs_slip-forward.bam",
-								"slipb": "tt_a_chr_dgm_shorts_legs_slip-backward.bam",
-								"lose": "tt_a_chr_dgm_shorts_legs_lose.bam",
-								"vd": "tt_a_chr_dgm_shorts_legs_victory-dance.bam",
-								"cringe": "tt_a_chr_dgm_shorts_legs_cringe.bam"})
+		self.AVATAR_LEGS = Actor("phase_3/models/char/tt_a_chr_dgm_shorts_legs_1000.bam",
+								{"neutral": "phase_3/models/char/tt_a_chr_dgm_shorts_legs_neutral.bam",
+								"run": "phase_3/models/char/tt_a_chr_dgm_shorts_legs_run.bam",
+								"walk": "phase_3/models/char/tt_a_chr_dgm_shorts_legs_walk.bam",
+								"pie": "phase_3/models/char/tt_a_chr_dgm_shorts_legs_pie-throw.bam",
+								"jump": "phase_3/models/char/tt_a_chr_dgm_shorts_legs_jump.bam",
+								"slipf": "phase_3/models/char/tt_a_chr_dgm_shorts_legs_slip-forward.bam",
+								"slipb": "phase_3/models/char/tt_a_chr_dgm_shorts_legs_slip-backward.bam",
+								"lose": "phase_3/models/char/tt_a_chr_dgm_shorts_legs_lose.bam",
+								"vd": "phase_3/models/char/tt_a_chr_dgm_shorts_legs_victory-dance.bam",
+								"cringe": "phase_3/models/char/tt_a_chr_dgm_shorts_legs_cringe.bam"})
 
 		self.AVATAR_LEGS.find('**/shoes').setTexture(self.AVA_TS, 1)
 
-		self.COACH_HEAD = loader.loadModel("pig-heads-1000.bam")
-		self.COACH_TORSO = Actor("tt_a_chr_dgs_shorts_torso_1000.bam",
-											{"neutral": "tt_a_chr_dgs_shorts_torso_neutral.bam",
-											"run": "tt_a_chr_dgs_shorts_torso_run.bam",
-											"walk": "tt_a_chr_dgs_shorts_torso_walk.bam",
-											"tickle": "tt_a_chr_dgs_shorts_torso_tickle.bam"})
+		self.COACH_HEAD = loader.loadModel("phase_3/models/char/pig-heads-1000.bam")
+		self.COACH_TORSO = Actor("phase_3/models/char/tt_a_chr_dgs_shorts_torso_1000.bam",
+											{"neutral": "phase_3/models/char/tt_a_chr_dgs_shorts_torso_neutral.bam",
+											"run": "phase_3/models/char/tt_a_chr_dgs_shorts_torso_run.bam",
+											"walk": "phase_3/models/char/tt_a_chr_dgs_shorts_torso_walk.bam",
+											"tickle": "phase_3/models/char/tt_a_chr_dgs_shorts_torso_tickle.bam"})
 
-		self.COACH_LEGS = Actor("tt_a_chr_dgs_shorts_legs_1000.bam",
-											{"neutral": "tt_a_chr_dgs_shorts_legs_neutral.bam",
-											"run": "tt_a_chr_dgs_shorts_legs_run.bam",
-											"walk": "tt_a_chr_dgs_shorts_legs_walk.bam",
-											"tickle": "tt_a_chr_dgs_shorts_legs_tickle.bam"})
+		self.COACH_LEGS = Actor("phase_3/models/char/tt_a_chr_dgs_shorts_legs_1000.bam",
+											{"neutral": "phase_3/models/char/tt_a_chr_dgs_shorts_legs_neutral.bam",
+											"run": "phase_3/models/char/tt_a_chr_dgs_shorts_legs_run.bam",
+											"walk": "phase_3/models/char/tt_a_chr_dgs_shorts_legs_walk.bam",
+											"tickle": "phase_3/models/char/tt_a_chr_dgs_shorts_legs_tickle.bam"})
 
 		self.FONT1 = loader.loadFont("phase_3/models/fonts/ImpressBT.ttf")
 
 		self.COACH_DIAL = loader.loadSfx("phase_3.5/audio/dial/coach.wav")
 
-		self.BOX = loader.loadModel("chatbox.bam")
+		self.BOX = loader.loadModel("phase_3/models/props/chatbox.bam")
 
-		self.COG_1 = Actor("suitB-mod.bam",
-						{"walk": "suitB-walk.bam",
-						"neutral": "suitB-neutral.bam",
-						"land": "suitB-landing.bam",
-						"throw": "suitB-throw-object.bam",
-						"throwp": "suitB-throw-paper.bam",
-						"jump": "suitB-jump.bam",
-						"pie": "suitB-pie-small.bam",
-						"dial": "suitB-phone.bam"})
+		self.COG_1 = Actor("phase_3.5/models/char/suitB-mod.bam",
+						{"walk": "phase_3.5/models/char/suitB-walk.bam",
+						"neutral": "phase_3.5/models/char/suitB-neutral.bam",
+						"land": "phase_3.5/models/char/suitB-landing.bam",
+						"throw": "phase_3.5/models/char/suitB-throw-object.bam",
+						"throwp": "phase_3.5/models/char/suitB-throw-paper.bam",
+						"jump": "phase_3.5/models/char/suitB-jump.bam",
+						"pie": "phase_3.5/models/char/suitB-pie-small.bam",
+						"dial": "phase_3.5/models/char/suitB-phone.bam"})
 
 
-		self.COG_1_HEAD = loader.loadModel("suitB-heads.bam")
+		self.COG_1_HEAD = loader.loadModel("phase_4/models/char/suitB-heads.bam")
 
-		self.SHADOW_AVATAR = loader.loadModel("drop_shadow.bam")
+		self.SHADOW_AVATAR = loader.loadModel("phase_3/models/props/drop_shadow.bam")
 		self.SAVNP = NodePath("avatar shadow")
 		self.SHADOW_AVATAR.reparentTo(self.SAVNP)
-		self.SHADOW_COG = loader.loadModel("drop_shadow.bam")
+		self.SHADOW_COG = loader.loadModel("phase_3/models/props/drop_shadow.bam")
 		self.SCONP = NodePath("cog shadow")
 		self.SHADOW_COG.reparentTo(self.SCONP)
-		self.SHADOW_COACH = loader.loadModel("drop_shadow.bam")
+		self.SHADOW_COACH = loader.loadModel("phase_3/models/props/drop_shadow.bam")
 		self.SCNP = NodePath("coach shadow")
 		self.SHADOW_COACH.reparentTo(self.SCNP)
 
 		self.PIE_SPLAT_SFX = loader.loadSfx("phase_4/audio/sfx/AA_wholepie_only.mp3")
 		self.PIE_THROW_SFX = loader.loadSfx("phase_3.5/audio/sfx/AA_pie_throw_only.mp3")
 
-		self.SPLAT = Actor("splat-mod.bam",
-							{"chan": "splat-chan.bam"})
+		self.SPLAT = Actor("phase_3.5/models/props/splat-mod.bam",
+							{"chan": "phase_3.5/models/props/splat-chan.bam"})
 		self.SPLAT.setColor(0.996094, 0.898438, 0.320312, 1.0)
 
 		self.COG_CHECKPOINT1 = TextNode("Cog checkpoint 1")
+		## WHY IS THIS COMMENTED?!
 		#self.COG_CHECKPOINT1.setText("Checkpoint1")
 		self.COG_CHECKPOINT1.setAlign(TextNode.ACenter)
 		self.COG_CP1_NP = render.attachNewNode(self.COG_CHECKPOINT1)
@@ -1433,53 +1434,58 @@ class SCENE:
 		base.accept('wheel_up', self.setWeapon_BCAKE)
 		base.accept('wheel_down', self.setWeapon_TART)
 		L.WEAPON_SELECT.play()
+
+	## WHY ARE SO MANY FILES MISSING IN setWeapon_TART?!
 	def setWeapon_TART(self):
 		self.weapon = 'TART'
-		self.CCAKE_ICON.remove()
-		self.CCAKE_ICON = OnscreenImage(image="phase_3.5/maps/cupcake_idle.png")
-		self.CCAKE_ICON.setTransparency(True)
-		self.CCAKE_ICON.setX(1)
-		self.CCAKE_ICON.setZ(0.5)
-		self.CCAKE_ICON.setScale(0.2)
 
-		self.TART_ICON.remove()
-		self.TART_ICON = OnscreenImage(image="phase_3.5/maps/tart_selected.png")
-		self.TART_ICON.setTransparency(True)
-		self.TART_ICON.setX(1)
-		self.TART_ICON.setZ(0.1)
-		self.TART_ICON.setScale(0.2)
+		## ALL OF THIS DOESN'T WORK!
+		## WHYYYYY
+		#self.CCAKE_ICON.remove()
+		#self.CCAKE_ICON = OnscreenImage(image="phase_3.5/maps/cupcake_idle.png")
+		#self.CCAKE_ICON.setTransparency(True)
+		#self.CCAKE_ICON.setX(1)
+		#self.CCAKE_ICON.setZ(0.5)
+		#self.CCAKE_ICON.setScale(0.2)
 
-		self.BCAKE_ICON.remove()
-		self.BCAKE_ICON = OnscreenImage(image="phase_3.5/maps/b_cake_idle.png")
-		self.BCAKE_ICON.setTransparency(True)
-		self.BCAKE_ICON.setX(1)
-		self.BCAKE_ICON.setZ(-0.3)
-		self.BCAKE_ICON.setScale(0.2)
+		#self.TART_ICON.remove()
+		#self.TART_ICON = OnscreenImage(image="phase_3.5/maps/tart_selected.png")
+		#self.TART_ICON.setTransparency(True)
+		#self.TART_ICON.setX(1)
+		#self.TART_ICON.setZ(0.1)
+		#self.TART_ICON.setScale(0.2)
+
+		#self.BCAKE_ICON.remove()
+		#self.BCAKE_ICON = OnscreenImage(image="phase_3.5/maps/b_cake_idle.png")
+		#self.BCAKE_ICON.setTransparency(True)
+		#self.BCAKE_ICON.setX(1)
+		#self.BCAKE_ICON.setZ(-0.3)
+		#self.BCAKE_ICON.setScale(0.2)
 		base.accept('wheel_up', self.setWeapon_CCAKE)
 		base.accept('wheel_down', self.setWeapon_BCAKE)
 		L.WEAPON_SELECT.play()
 	def setWeapon_BCAKE(self):
 		self.weapon = 'BCAKE'
-		self.CCAKE_ICON.remove()
-		self.CCAKE_ICON = OnscreenImage(image="phase_3.5/maps/cupcake_idle.png")
-		self.CCAKE_ICON.setTransparency(True)
-		self.CCAKE_ICON.setX(1)
-		self.CCAKE_ICON.setZ(0.5)
-		self.CCAKE_ICON.setScale(0.2)
+		#self.CCAKE_ICON.remove()
+		#self.CCAKE_ICON = OnscreenImage(image="phase_3.5/maps/cupcake_idle.png")
+		#self.CCAKE_ICON.setTransparency(True)
+		#self.CCAKE_ICON.setX(1)
+		#self.CCAKE_ICON.setZ(0.5)
+		#self.CCAKE_ICON.setScale(0.2)
 
-		self.TART_ICON.remove()
-		self.TART_ICON = OnscreenImage(image="phase_3.5/maps/tart_idle.png")
-		self.TART_ICON.setTransparency(True)
-		self.TART_ICON.setX(1)
-		self.TART_ICON.setZ(0.1)
-		self.TART_ICON.setScale(0.2)
+		#self.TART_ICON.remove()
+		#self.TART_ICON = OnscreenImage(image="phase_3.5/maps/tart_idle.png")
+		#self.TART_ICON.setTransparency(True)
+		#self.TART_ICON.setX(1)
+		#self.TART_ICON.setZ(0.1)
+		#self.TART_ICON.setScale(0.2)
 
-		self.BCAKE_ICON.remove()
-		self.BCAKE_ICON = OnscreenImage(image="phase_3.5/maps/b_cake_selected.png")
-		self.BCAKE_ICON.setTransparency(True)
-		self.BCAKE_ICON.setX(1)
-		self.BCAKE_ICON.setZ(-0.3)
-		self.BCAKE_ICON.setScale(0.2)
+		#self.BCAKE_ICON.remove()
+		#self.BCAKE_ICON = OnscreenImage(image="phase_3.5/maps/b_cake_selected.png")
+		#self.BCAKE_ICON.setTransparency(True)
+		#self.BCAKE_ICON.setX(1)
+		#self.BCAKE_ICON.setZ(-0.3)
+		#self.BCAKE_ICON.setScale(0.2)
 		base.accept('wheel_up', self.setWeapon_TART)
 		base.accept('wheel_down', self.setWeapon_CCAKE)
 		L.WEAPON_SELECT.play()
@@ -1499,27 +1505,30 @@ class SCENE:
 		if self.weapon == 'BCAKE':
 			self.B_CAKE_START()
 
+    ## SO MANY MISSING IMAGES...
 	def COG_INITAI1(self, task):
 		base.accept('PavatarSensor-into', self.CHECK_PIE_COL)
 		base.accept('CCavatarSensor-into', self.CHECK_CCAKE_COL)
 		base.accept('BavatarSensor-into', self.CHECK_BCAKE_COL)
 		base.accept('TavatarSensor-into', self.CHECK_TIE_COL)
 		self.weapon = 'TART'
-		self.CCAKE_ICON = OnscreenImage(image="phase_3.5/maps/cupcake_idle.png")
-		self.CCAKE_ICON.setTransparency(True)
-		self.CCAKE_ICON.setX(1)
-		self.CCAKE_ICON.setZ(0.5)
-		self.CCAKE_ICON.setScale(0.2)
-		self.TART_ICON = OnscreenImage(image="phase_3.5/maps/tart_selected.png")
-		self.TART_ICON.setTransparency(True)
-		self.TART_ICON.setX(1)
-		self.TART_ICON.setZ(0.1)
-		self.TART_ICON.setScale(0.2)
-		self.BCAKE_ICON = OnscreenImage(image="phase_3.5/maps/b_cake_idle.png")
-		self.BCAKE_ICON.setTransparency(True)
-		self.BCAKE_ICON.setX(1)
-		self.BCAKE_ICON.setZ(-0.3)
-		self.BCAKE_ICON.setScale(0.2)
+
+		## ALL OF THIS DOESN'T WORK!
+		#self.CCAKE_ICON = OnscreenImage(image="phase_3.5/maps/cupcake_idle.png")
+		#self.CCAKE_ICON.setTransparency(True)
+		#self.CCAKE_ICON.setX(1)
+		#self.CCAKE_ICON.setZ(0.5)
+		#self.CCAKE_ICON.setScale(0.2)
+		#self.TART_ICON = OnscreenImage(image="phase_3.5/maps/tart_selected.png")
+		#self.TART_ICON.setTransparency(True)
+		#self.TART_ICON.setX(1)
+		#self.TART_ICON.setZ(0.1)
+		#self.TART_ICON.setScale(0.2)
+		#self.BCAKE_ICON = OnscreenImage(image="phase_3.5/maps/b_cake_idle.png")
+		#self.BCAKE_ICON.setTransparency(True)
+		#self.BCAKE_ICON.setX(1)
+		#self.BCAKE_ICON.setZ(-0.3)
+		#self.BCAKE_ICON.setScale(0.2)
 		base.accept('control-up', self.CHECK_ACTIVE_WEAPON_UP)
 		base.accept('control', self.CHECK_ACTIVE_WEAPON_DN)
 		base.accept('wheel_up', self.setWeapon_CCAKE)
