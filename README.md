@@ -21,10 +21,6 @@ Run ```play.py``` and input the name of the file you want to run (for example ``
 
 There are some Maya 2016 (I think?) files along with the .bam files here. all made by me and my mom when we were trying to make the olaf head. I don't know if the fox head was made by me or if I also "borrowed" it.
 
-#### P.P.S.
-
-You're gonna need the original Toontown Online files to run these scripts. I think Toontown Rewritten's files would work too? haven't tried it.
-
 # Disclaimer
 
 The phase files are provided as-is with absolutely no warranty, or licensing of any kind. It should be noted that the Toontown Online assets are still the property of The Walt Disney Company and as such should only be used for reference purposes.
